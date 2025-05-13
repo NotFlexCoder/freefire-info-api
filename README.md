@@ -1,6 +1,6 @@
 ## 🔍 FreeFire Info API
 
-This simple Vercel-hosted API fetches and filters Free Fire user info using a UID. It acts as a proxy to `https://storebix.serv00.net/ff-info?uid=` and removes unwanted fields from the response.
+This simple Vercel-hosted API fetches and filters Free Fire user info using a UID. It acts as a proxy to `https://storebix.serv00.net/ff-info?uid=&id=&token=` and removes unwanted fields from the response.
 
 ## 🚀 Features
 
@@ -17,18 +17,20 @@ This simple Vercel-hosted API fetches and filters Free Fire user info using a UI
 **1. Endpoint**
 Send a GET request to the deployed function:
 ```
-GET /?uid=YOUR_UID_HERE
+GET /?uid=YOUR_UID&id=YOUR_ID&token=YOUR_TOKEN
 ```
 
 **2. Query Parameters**
 
-| Parameter | Required | Description                    |
-|-----------|----------|--------------------------------|
-| `uid`     | ✅       | The Free Fire UID to look up. |
+| Parameter | Required | Description                          |
+|-----------|----------|--------------------------------------|
+| `uid`     | ✅       | The Free Fire UID to look up.        |
+| `id`      | ✅       | ID parameter required by the API.    |
+| `token`   | ✅       | Token parameter required by the API. |
 
 **✅ Example Request**
 ```
-curl "https://your-vercel-deployment.vercel.app/?uid=123456789"
+curl "https://your-vercel-deployment.vercel.app/?uid=123456789&id=abc123&token=xyz456"
 ```
 
 **✅ Example Response**
